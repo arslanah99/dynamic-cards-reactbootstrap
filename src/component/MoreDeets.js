@@ -1,65 +1,208 @@
 import React from "react";
 import "./Box.css";
-import Powerslap from "./video/powerslap.mp4";
-import { ToastContainer, toast, Zoom, Bounce } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import axios from "axios";
+import { Card } from "react-bootstrap";
 
 const MoreDeets = () => {
-  toast.error("OH NOES! PAGE NOT FOUND?  .·´¯`(>▂<)´¯`·.");
-  toast.success("OH NOES! PAGE NOT FOUND?  .·´¯`(>▂<)´¯`·.");
-  toast.info("OH NOES! PAGE NOT FOUND?  .·´¯`(>▂<)´¯`·.");
-  toast.warn("OH NOES! PAGE NOT FOUND?  .·´¯`(>▂<)´¯`·.");
+  const cardInfo = [
+    {
+      image: "https://i.insider.com/50f967f56bb3f7830a000019",
+      title: "Lebron James",
+      text: "THE GOAT",
+    },
+    {
+      image:
+        "https://cdn.vox-cdn.com/thumbor/M1qLla2h-V_2yV_Z4nF_NHH_tjA=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/18286450/usa_today_12495932.jpg",
+      title: "Alex Caruso",
+      text: "THE TRUE GOAT",
+    },
+    {
+      image:
+        "https://www.insidehook.com/wp-content/uploads/2020/03/steph-curry-nba-jam-e1583192954848.jpg?fit=734%2C488",
+      title: "Steph Curry",
+      text: "he good",
+    },
+    {
+      image:
+        "https://i.pinimg.com/originals/03/ce/01/03ce015ea85dc84a17fb4c24a96cd87e.jpg",
+      title: "Michael Jordan",
+      text: "he is very close to goat",
+    },
+    {
+      image: "https://i.insider.com/50f967f56bb3f7830a000019",
+      title: "Lebron James",
+      text: "THE GOAT",
+    },
+    {
+      image:
+        "https://cdn.vox-cdn.com/thumbor/M1qLla2h-V_2yV_Z4nF_NHH_tjA=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/18286450/usa_today_12495932.jpg",
+      title: "Alex Caruso",
+      text: "THE TRUE GOAT",
+    },
+    {
+      image:
+        "https://www.insidehook.com/wp-content/uploads/2020/03/steph-curry-nba-jam-e1583192954848.jpg?fit=734%2C488",
+      title: "Steph Curry",
+      text: "he good",
+    },
+    {
+      image:
+        "https://i.pinimg.com/originals/03/ce/01/03ce015ea85dc84a17fb4c24a96cd87e.jpg",
+      title: "Michael Jordan",
+      text: "he is very close to goat",
+    },
+    {
+      image: "https://i.insider.com/50f967f56bb3f7830a000019",
+      title: "Lebron James",
+      text: "THE GOAT",
+    },
+    {
+      image:
+        "https://cdn.vox-cdn.com/thumbor/M1qLla2h-V_2yV_Z4nF_NHH_tjA=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/18286450/usa_today_12495932.jpg",
+      title: "Alex Caruso",
+      text: "THE TRUE GOAT",
+    },
+    {
+      image:
+        "https://www.insidehook.com/wp-content/uploads/2020/03/steph-curry-nba-jam-e1583192954848.jpg?fit=734%2C488",
+      title: "Steph Curry",
+      text: "he good",
+    },
+    {
+      image:
+        "https://i.pinimg.com/originals/03/ce/01/03ce015ea85dc84a17fb4c24a96cd87e.jpg",
+      title: "Michael Jordan",
+      text: "he is very close to goat",
+    },
+    {
+      image: "https://i.insider.com/50f967f56bb3f7830a000019",
+      title: "Lebron James",
+      text: "THE GOAT",
+    },
+    {
+      image:
+        "https://cdn.vox-cdn.com/thumbor/M1qLla2h-V_2yV_Z4nF_NHH_tjA=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/18286450/usa_today_12495932.jpg",
+      title: "Alex Caruso",
+      text: "THE TRUE GOAT",
+    },
+    {
+      image:
+        "https://www.insidehook.com/wp-content/uploads/2020/03/steph-curry-nba-jam-e1583192954848.jpg?fit=734%2C488",
+      title: "Steph Curry",
+      text: "he good",
+    },
+    {
+      image:
+        "https://i.pinimg.com/originals/03/ce/01/03ce015ea85dc84a17fb4c24a96cd87e.jpg",
+      title: "Michael Jordan",
+      text: "he is very close to goat",
+    },
+    {
+      image: "https://i.insider.com/50f967f56bb3f7830a000019",
+      title: "Lebron James",
+      text: "THE GOAT",
+    },
+    {
+      image:
+        "https://cdn.vox-cdn.com/thumbor/M1qLla2h-V_2yV_Z4nF_NHH_tjA=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/18286450/usa_today_12495932.jpg",
+      title: "Alex Caruso",
+      text: "THE TRUE GOAT",
+    },
+    {
+      image:
+        "https://www.insidehook.com/wp-content/uploads/2020/03/steph-curry-nba-jam-e1583192954848.jpg?fit=734%2C488",
+      title: "Steph Curry",
+      text: "he good",
+    },
+    {
+      image:
+        "https://i.pinimg.com/originals/03/ce/01/03ce015ea85dc84a17fb4c24a96cd87e.jpg",
+      title: "Michael Jordan",
+      text: "he is very close to goat",
+    },
+    {
+      image: "https://i.insider.com/50f967f56bb3f7830a000019",
+      title: "Lebron James",
+      text: "THE GOAT",
+    },
+    {
+      image:
+        "https://cdn.vox-cdn.com/thumbor/M1qLla2h-V_2yV_Z4nF_NHH_tjA=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/18286450/usa_today_12495932.jpg",
+      title: "Alex Caruso",
+      text: "THE TRUE GOAT",
+    },
+    {
+      image:
+        "https://www.insidehook.com/wp-content/uploads/2020/03/steph-curry-nba-jam-e1583192954848.jpg?fit=734%2C488",
+      title: "Steph Curry",
+      text: "he good",
+    },
+    {
+      image:
+        "https://i.pinimg.com/originals/03/ce/01/03ce015ea85dc84a17fb4c24a96cd87e.jpg",
+      title: "Michael Jordan",
+      text: "he is very close to goat",
+    },
+    {
+      image: "https://i.insider.com/50f967f56bb3f7830a000019",
+      title: "Lebron James",
+      text: "THE GOAT",
+    },
+    {
+      image:
+        "https://cdn.vox-cdn.com/thumbor/M1qLla2h-V_2yV_Z4nF_NHH_tjA=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/18286450/usa_today_12495932.jpg",
+      title: "Alex Caruso",
+      text: "THE TRUE GOAT",
+    },
+    {
+      image:
+        "https://www.insidehook.com/wp-content/uploads/2020/03/steph-curry-nba-jam-e1583192954848.jpg?fit=734%2C488",
+      title: "Steph Curry",
+      text: "he good",
+    },
+    {
+      image:
+        "https://i.pinimg.com/originals/03/ce/01/03ce015ea85dc84a17fb4c24a96cd87e.jpg",
+      title: "Michael Jordan",
+      text: "he is very close to goat",
+    },
+    {
+      image: "https://i.insider.com/50f967f56bb3f7830a000019",
+      title: "Lebron James",
+      text: "THE GOAT",
+    },
+    {
+      image:
+        "https://cdn.vox-cdn.com/thumbor/M1qLla2h-V_2yV_Z4nF_NHH_tjA=/1400x1400/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/18286450/usa_today_12495932.jpg",
+      title: "Alex Caruso",
+      text: "THE TRUE GOAT",
+    },
+    {
+      image:
+        "https://www.insidehook.com/wp-content/uploads/2020/03/steph-curry-nba-jam-e1583192954848.jpg?fit=734%2C488",
+      title: "Steph Curry",
+      text: "he good",
+    },
+    {
+      image:
+        "https://i.pinimg.com/originals/03/ce/01/03ce015ea85dc84a17fb4c24a96cd87e.jpg",
+      title: "Michael Jordan",
+      text: "he is very close to goat",
+    },
+  ];
 
-  // function to create custom toast
-  const successItem = () => {
-    // custom toast is the title
-    toast("Custom Toast", {
-      // class name for css
-      className: "black-background",
-      // bodyClassName: "grow-font-size",
-      // progressClassName: "fancy-progress-bar"
-      // draggable to remove
-      draggable: true,
-      // position for toast
-      position: toast.POSITION.TOP_CENTER
-    });
+  const renderCard = (card, index) => {
+    return (
+      <Card style={{ width: "18rem" }} key={index} className="box">
+        <Card.Img variant="top" src="holder.js/100px180" src={card.image} />
+        <Card.Body>
+          <Card.Title>{card.title}</Card.Title>
+          <Card.Text>{card.text}</Card.Text>
+        </Card.Body>
+      </Card>
+    );
   };
 
-  axios
-    .get("/fdsajifsda")
-    .then(res => {
-      console.log(res);
-    })
-    .catch(err => {
-      if (err) {
-        toast("axios api error", {
-          // class name for css
-          className: "black-background",
-          // bodyClassName: "grow-font-size",
-          // progressClassName: "fancy-progress-bar"
-          // draggable to remove
-          draggable: true,
-          // position for toast
-          position: toast.POSITION.TOP_CENTER
-        });
-      }
-    });
-
-  return (
-    <div className="App">
-      <>
-        <ToastContainer
-          draggable={false}
-          transition={Bounce}
-          autoClose={7000}
-        />
-      </>
-      <button onClick={successItem}>SUCCESS</button>
-      {/* <h1>MoreDeets</h1> */}
-      {/* <div className="boxy">WOW BOXY BOX</div> */}
-    </div>
-  );
+  return <div className="grid">{cardInfo.map(renderCard)}</div>;
 };
 
 export default MoreDeets;

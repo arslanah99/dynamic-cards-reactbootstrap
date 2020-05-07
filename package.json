@@ -13,13 +13,15 @@
     "chartjs-plugin-zoom": "^0.7.5",
     "granim": "^2.0.0",
     "hammerjs": "^2.0.8",
+    "howler": "^2.1.3",
     "react": "^16.12.0",
-    "react-bootstrap": "^1.0.0-beta.16",
+    "react-bootstrap": "^1.0.1",
     "react-chartjs-2": "^2.9.0",
     "react-dom": "^16.12.0",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.3.0",
-    "react-toastify": "^5.5.0"
+    "react-scripts": "3.4.0",
+    "react-toastify": "^5.5.0",
+    "reshake": "^1.2.1"
   },
   "scripts": {
     "start": "react-scripts start",
